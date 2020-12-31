@@ -1,0 +1,55 @@
+{
+    "name": "bencoderus/minauth",
+    "description": "This package serves as a token based client authentication system.",
+    "keywords": [
+        "bencoderus",
+        "minauth"
+    ],
+    "homepage": "https://github.com/bencoderus/minauth",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Benjamin Iduwe",
+            "email": "bencoderus@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bencoderus\\MinAuth\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bencoderus\\MinAuth\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bencoderus\\MinAuth\\MinAuthServiceProvider"
+            ],
+            "aliases": {
+                "MinAuth": "Bencoderus\\MinAuth\\MinAuthFacade"
+            }
+        }
+    }
+}
