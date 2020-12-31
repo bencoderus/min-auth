@@ -8,7 +8,7 @@ use Bencoderus\MinAuth\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 
-class ClientActionTest extends TestCase
+class MinAuthTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
