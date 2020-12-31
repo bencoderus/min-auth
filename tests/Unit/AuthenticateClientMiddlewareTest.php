@@ -44,7 +44,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
     public function testClientWithABlacklistedApiKey()
     {
         $clientName = 'Bencoderus';
-        $client = MinAuth::createClient($clientName, "127.0.0.1", true);
+        $client = MinAuth::createClient($clientName, '127.0.0.1', true);
 
         // Given we have a request
         $request = new Request();
