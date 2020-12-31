@@ -18,7 +18,7 @@ class MinAuth
         return Client::create([
             'name' => $name,
             'api_key' => self::generateApiKey(),
-            'ip' => "127.0.0.1",
+            'ip' => '127.0.0.1',
         ]);
     }
 

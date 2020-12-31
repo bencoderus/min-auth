@@ -15,7 +15,7 @@ class CreateClientCommandTest extends TestCase
         Artisan::call('min-auth:create-client bencoderus');
 
         $this->assertDatabaseHas('clients', [
-            'name' => 'bencoderus'
+            'name' => 'bencoderus',
         ]);
     }
 }

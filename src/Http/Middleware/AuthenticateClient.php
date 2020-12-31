@@ -19,25 +19,24 @@ class AuthenticateClient
     public function handle($request, Closure $next)
     {
         if (! $apiKey = $request->header(config('min-auth.header_name'))) {
-            throw new AuthenticationException("Api key is missing");
+            throw new AuthenticationException('Api key is missing');
         }
 
         if (! $client = MinAuth::findByApiKey($apiKey)) {
-            throw new AuthenticationException("Api key is invalid");
+            throw new AuthenticationException('Api key is invalid');
         }
 
         if ($client->is_blacklisted) {
-            throw new AuthenticationException("Api key has been blacklisted");
+            throw new AuthenticationException('Api key has been blacklisted');
         }
 
         if (! $this->validateIp($request, $client)) {
-            throw new AuthenticationException("Client Ip address is invalid");
+            throw new AuthenticationException('Client Ip address is invalid');
         }
 
         $request->merge(['auth_client' => $client]);
 
         return $next($request);
-
     }
 
     /**
@@ -55,5 +54,4 @@ class AuthenticateClient
 
         return $request->ip() === $client->ip;
     }
-
 }

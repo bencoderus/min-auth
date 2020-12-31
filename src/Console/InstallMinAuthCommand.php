@@ -21,13 +21,13 @@ class InstallMinAuthCommand extends Command
 
         $this->call('vendor:publish', [
             '--provider' => "Bencoderus\MinAuth\MinAuthServiceProvider",
-            '--tag' => "config"
+            '--tag' => 'config',
         ]);
 
         if (! class_exists('CreateClientsTable')) {
             $this->call('vendor:publish', [
                 '--provider' => "Bencoderus\MinAuth\MinAuthServiceProvider",
-                '--tag' => "migrations"
+                '--tag' => 'migrations',
             ]);
         }
 
