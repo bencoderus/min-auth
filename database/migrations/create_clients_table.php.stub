@@ -19,6 +19,7 @@ class CreateClientsTable extends Migration
             $table->ipAddress('ip');
             $table->string('api_key');
             $table->boolean('is_blacklisted')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
