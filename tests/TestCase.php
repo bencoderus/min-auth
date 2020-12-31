@@ -11,7 +11,7 @@ class TestCase extends MainCase
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__ . '/../database/factories');
+        $this->withFactories(__DIR__.'/../database/factories');
     }
 
     protected function getPackageProviders($app): array
@@ -28,7 +28,7 @@ class TestCase extends MainCase
     {
 
         // import the CreatePostsTable class from the migration
-        include_once(__DIR__ . '/../database/migrations/create_clients_table.php.stub');
+        include_once __DIR__.'/../database/migrations/create_clients_table.php.stub';
 
         // run the up() method of that migration class
         (new \CreateClientsTable)->up();

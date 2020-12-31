@@ -22,7 +22,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         $request = new Request();
         $request->headers->set('api_key', $this->faker->md5);
 
-        $this->expectExceptionMessage("Api key is invalid");
+        $this->expectExceptionMessage('Api key is invalid');
         $this->expectException(AuthenticationException::class);
 
         (new AuthenticateClient())->handle($request, function ($request) {
@@ -37,7 +37,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         // Given we have a request
         $request = new Request();
 
-        $this->expectExceptionMessage("Api key is missing");
+        $this->expectExceptionMessage('Api key is missing');
         $this->expectException(AuthenticationException::class);
 
         (new AuthenticateClient())->handle($request, function ($request) {
@@ -53,7 +53,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         $request = new Request();
         $request->headers->set('api_key', $client->api_key);
 
-        $this->expectExceptionMessage("Api key has been blacklisted");
+        $this->expectExceptionMessage('Api key has been blacklisted');
         $this->expectException(AuthenticationException::class);
 
         (new AuthenticateClient())->handle($request, function ($request) {
@@ -82,7 +82,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         $request = new Request();
         $request->headers->set('api_key', $client->api_key);
 
-        $this->expectExceptionMessage("Client Ip address is invalid");
+        $this->expectExceptionMessage('Client Ip address is invalid');
         $this->expectException(AuthenticationException::class);
 
         (new AuthenticateClient())->handle($request, function ($request) use ($client) {

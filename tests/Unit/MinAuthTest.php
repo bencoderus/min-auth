@@ -46,7 +46,7 @@ class MinAuthTest extends TestCase
 
         $this->assertSame($ipAddress, $client->ip);
         $this->assertDatabaseHas('clients', [
-            'ip' => $ipAddress
+            'ip' => $ipAddress,
         ]);
     }
 
@@ -76,12 +76,12 @@ class MinAuthTest extends TestCase
 
     public function testCreateAClient(): void
     {
-        $clientName = "Bencoderus";
+        $clientName = 'Bencoderus';
         $client = MinAuth::createClient($clientName);
 
         $this->assertIsString($client->name);
         $this->assertDatabaseHas('clients', [
-            'name' => $clientName
+            'name' => $clientName,
         ]);
     }
 }

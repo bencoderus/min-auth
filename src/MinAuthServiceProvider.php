@@ -21,7 +21,7 @@ class MinAuthServiceProvider extends ServiceProvider
         $router->aliasMiddleware('auth.client', AuthenticateClient::class);
 
         $this->app->make('Illuminate\Database\Eloquent\Factory')
-            ->load(__DIR__ . '/../database/factories');
+            ->load(__DIR__.'/../database/factories');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
@@ -30,12 +30,12 @@ class MinAuthServiceProvider extends ServiceProvider
             ]);
 
             $this->publishes([
-                __DIR__ . '/../config/min-auth.php' => config_path('min-auth.php'),
+                __DIR__.'/../config/min-auth.php' => config_path('min-auth.php'),
             ], 'config');
 
             if (! class_exists('CreateClientsTable')) {
                 $this->publishes([
-                    __DIR__ . '/../database/migrations/create_clients_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_clients_table.php'),
+                    __DIR__.'/../database/migrations/create_clients_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_clients_table.php'),
                     // you can add any number of migrations here
                 ], 'migrations');
             }
@@ -51,7 +51,6 @@ class MinAuthServiceProvider extends ServiceProvider
             return new MinAuth;
         });
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/min-auth.php', 'min-auth');
-
+        $this->mergeConfigFrom(__DIR__.'/../config/min-auth.php', 'min-auth');
     }
 }

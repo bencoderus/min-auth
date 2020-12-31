@@ -6,7 +6,7 @@
 
 return [
     /**
-     * Toggle IP Address validation for client
+     * Toggle IP Address validation for client.
      */
     'validate_ip' => true,
 
