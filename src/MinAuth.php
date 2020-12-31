@@ -15,7 +15,7 @@ class MinAuth
      * @param bool $isBlacklisted
      * @return \Bencoderus\MinAuth\Models\Client
      */
-    public static function createClient(string $name, string $ip = "127.0.0.1", bool $isBlacklisted = false): Client
+    public static function createClient(string $name, string $ip = '127.0.0.1', bool $isBlacklisted = false): Client
     {
         return Client::create([
             'name' => $name,
