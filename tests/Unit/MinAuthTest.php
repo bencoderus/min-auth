@@ -14,7 +14,8 @@ class MinAuthTest extends TestCase
 
     public function testFindAClientWithAValidApiKey(): void
     {
-        $client = factory(Client::class)->create(['name' => 'Bencoderus']);
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
 
         $foundClient = MinAuth::findByApiKey($client->api_key);
 
@@ -39,7 +40,9 @@ class MinAuthTest extends TestCase
 
     public function testUpdateClientIpAddress(): void
     {
-        $client = factory(Client::class)->create(['name' => 'Bencoderus']);
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
+
         $ipAddress = $this->faker->ipv4;
 
         $client = MinAuth::updateIpAddress($client, $ipAddress);
@@ -52,10 +55,8 @@ class MinAuthTest extends TestCase
 
     public function testBlacklistAClient(): void
     {
-        $client = factory(Client::class)->create([
-            'name' => 'Bencoderus',
-            'is_blacklisted' => false,
-        ]);
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
 
         $client = MinAuth::blacklistClient($client);
 
@@ -64,10 +65,8 @@ class MinAuthTest extends TestCase
 
     public function testWhitelistAClient(): void
     {
-        $client = factory(Client::class)->create([
-            'name' => 'Bencoderus',
-            'is_blacklisted' => true,
-        ]);
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName, "127.0.0.1", true);
 
         $client = MinAuth::WhitelistClient($client);
 

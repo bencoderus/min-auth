@@ -3,7 +3,7 @@
 namespace Bencoderus\MinAuth\Tests\Unit;
 
 use Bencoderus\MinAuth\Http\Middleware\AuthenticateClient;
-use Bencoderus\MinAuth\Models\Client;
+use Bencoderus\MinAuth\MinAuth;
 use Bencoderus\MinAuth\Tests\TestCase;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -17,8 +17,6 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
     public function testClientWithAnInvalidApiKey()
     {
-        $client = factory(Client::class)->create();
-
         $request = new Request();
         $request->headers->set('api_key', $this->faker->md5);
 
@@ -32,8 +30,6 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
     public function testClientWithAMissingApiKey()
     {
-        $client = factory(Client::class)->create();
-
         // Given we have a request
         $request = new Request();
 
@@ -47,7 +43,8 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
     public function testClientWithABlacklistedApiKey()
     {
-        $client = factory(Client::class)->create(['is_blacklisted' => true]);
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName, "127.0.0.1", true);
 
         // Given we have a request
         $request = new Request();
@@ -63,7 +60,8 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
     public function testClientWithAValidApiKey()
     {
-        $client = factory(Client::class)->create();
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
 
         $request = new Request();
         $request->headers->set('api_key', $client->api_key);
@@ -77,7 +75,8 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
     public function testClientWithAnInvalidIpAddress()
     {
-        $client = factory(Client::class)->create();
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
 
         $request = new Request();
         $request->headers->set('api_key', $client->api_key);
