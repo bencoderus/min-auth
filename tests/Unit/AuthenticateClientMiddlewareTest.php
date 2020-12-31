@@ -18,7 +18,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
     public function testClientWithAnInvalidApiKey()
     {
         $request = new Request();
-        $request->headers->set('api_key', $this->faker->md5);
+        $request->headers->set(config('min-auth.header_name'), $this->faker->md5);
 
         $this->expectExceptionMessage('Api key is invalid');
         $this->expectException(AuthenticationException::class);
@@ -48,7 +48,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
 
         // Given we have a request
         $request = new Request();
-        $request->headers->set('api_key', $client->api_key);
+        $request->headers->set(config('min-auth.header_name'), $client->api_key);
 
         $this->expectExceptionMessage('Api key has been blacklisted');
         $this->expectException(AuthenticationException::class);
@@ -64,7 +64,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         $client = MinAuth::createClient($clientName);
 
         $request = new Request();
-        $request->headers->set('api_key', $client->api_key);
+        $request->headers->set(config('min-auth.header_name'), $client->api_key);
 
         Config::set(['min-auth.validate_ip' => false]);
 
@@ -79,7 +79,7 @@ class AuthenticateClientMiddlewareTest extends TestCase
         $client = MinAuth::createClient($clientName);
 
         $request = new Request();
-        $request->headers->set('api_key', $client->api_key);
+        $request->headers->set(config('min-auth.header_name'), $client->api_key);
 
         $this->expectExceptionMessage('Client Ip address is invalid');
         $this->expectException(AuthenticationException::class);

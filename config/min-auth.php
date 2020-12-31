@@ -11,7 +11,7 @@ return [
     'validate_ip' => true,
 
     /**
-     * Set the default request header name here eg. api_key, token, x_api_key.
+     * Set the default request header name here eg. api-key, token, x-api-key.
      */
-    'header_name' => 'api_key',
+    'header_name' => 'api-key',
 ];
