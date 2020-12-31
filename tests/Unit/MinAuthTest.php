@@ -66,7 +66,7 @@ class MinAuthTest extends TestCase
     public function testWhitelistAClient(): void
     {
         $clientName = 'Bencoderus';
-        $client = MinAuth::createClient($clientName, "127.0.0.1", true);
+        $client = MinAuth::createClient($clientName, '127.0.0.1', true);
 
         $client = MinAuth::WhitelistClient($client);
 
