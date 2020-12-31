@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983255c-1f67-4f04-8311-b93f83523b44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/CreateClientCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CreateClientCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinAuth.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinAuth.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <workItem from="1609284854199" duration="3567000" />
       <workItem from="1609288964624" duration="2537000" />
       <workItem from="1609326692733" duration="5876000" />
-      <workItem from="1609334491347" duration="10283000" />
+      <workItem from="1609334491347" duration="11003000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1609428636258</created>
@@ -144,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609428636258</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modify MinAuthTest">
+      <created>1609429047071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609429047071</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,14 +171,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Modify MinAuthTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify MinAuthTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/MinAuthServiceProvider.php</url>
-          <line>25</line>
+          <line>24</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

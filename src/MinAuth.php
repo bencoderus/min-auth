@@ -43,7 +43,7 @@ class MinAuth
      * @param string $ip
      * @return \Bencoderus\MinAuth\Models\Client
      */
-    public static function updateIpAddress(Client $client, string $ip)
+    public static function updateIpAddress(Client $client, string $ip): Client
     {
         $client->update(['ip' => $ip]);
 

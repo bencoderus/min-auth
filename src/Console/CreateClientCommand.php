@@ -20,7 +20,7 @@ class CreateClientCommand extends Command
 
         $client = MinAuth::createClient($this->argument('name'));
 
-        $this->info('Client created Successfully.');
+        $this->info('Client created Successfully');
         $this->info($client->api_key);
     }
 }
