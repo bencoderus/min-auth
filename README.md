@@ -67,6 +67,12 @@ public function __construct(){
 
 #### Using the helpers
 
+Use MinAuth class
+
+``` php
+use Bencoderus\MinAuth\MinAuth;
+```
+
 Create a client
 
 ``` php
