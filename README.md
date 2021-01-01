@@ -67,7 +67,7 @@ public function __construct(){
 
 #### Using the helpers
 
-Use MinAuth class
+Import Min Auth Helper
 
 ``` php
 use Bencoderus\MinAuth\MinAuth;
