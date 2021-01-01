@@ -1,7 +1,7 @@
 # Min Auth
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bencoderus/minauth.svg?style=flat-square)](https://packagist.org/packages/bencoderus/minauth)
-[![Build Status](https://img.shields.io/travis/bencoderus/minauth/master.svg?style=flat-square)](https://travis-ci.org/bencoderus/minauth)
+[![Build Status](https://img.shields.io/travis/bencoderus/min-auth/master.svg?style=flat-square)](https://travis-ci.org/bencoderus/min-auth)
 [![Quality Score](https://img.shields.io/scrutinizer/g/bencoderus/minauth.svg?style=flat-square)](https://scrutinizer-ci.com/g/bencoderus/minauth)
 [![Latest Stable Version](https://poser.pugx.org/bencoderus/minauth/v)](//packagist.org/packages/bencoderus/minauth)
 [![License](https://poser.pugx.org/bencoderus/minauth/license)](//packagist.org/packages/bencoderus/minaut)
