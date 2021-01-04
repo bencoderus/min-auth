@@ -1,9 +1,9 @@
 {
-    "name": "bencoderus/minauth",
+    "name": "bencoderus/min-auth",
     "description": "This package serves as a token based client authentication system.",
     "keywords": [
         "bencoderus",
-        "minauth",
+        "min-auth",
         "client",
         "authentication",
         "auth",
