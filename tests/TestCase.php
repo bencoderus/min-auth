@@ -24,9 +24,8 @@ class TestCase extends MainCase
 
     private function runMigrations()
     {
-
         // import the CreatePostsTable class from the migration
-        include_once __DIR__.'/../database/migrations/create_clients_table.php.stub';
+        include_once __DIR__ . '/../database/migrations/create_clients_table.php.stub';
 
         // run the up() method of that migration class
         (new \CreateClientsTable)->up();
