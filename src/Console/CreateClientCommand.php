@@ -4,7 +4,6 @@ namespace Bencoderus\MinAuth\Console;
 
 use Bencoderus\MinAuth\MinAuth;
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateClientCommand extends Command
 {
