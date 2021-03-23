@@ -15,7 +15,7 @@ This package requires PHP >= 7.2 and above. (Laravel 8 and PHP 8 support are ava
 You can install the package via composer:
 
 ```bash
-composer require bencoderus/minauth
+composer require bencoderus/min-auth
 ```
 
 Publish migration and configurations.
