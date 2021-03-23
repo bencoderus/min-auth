@@ -8,8 +8,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateClientCommand extends Command
 {
-    use RefreshDatabase;
-
     protected $signature = 'min-auth:create-client {name}';
 
     protected $description = 'Create a client.';

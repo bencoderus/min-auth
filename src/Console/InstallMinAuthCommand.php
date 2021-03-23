@@ -7,8 +7,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class InstallMinAuthCommand extends Command
 {
-    use RefreshDatabase;
-
     protected $signature = 'min-auth:install';
 
     protected $description = 'Install Min Auth Package';
