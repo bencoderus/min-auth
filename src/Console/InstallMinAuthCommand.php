@@ -3,7 +3,6 @@
 namespace Bencoderus\MinAuth\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class InstallMinAuthCommand extends Command
 {
