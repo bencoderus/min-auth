@@ -100,6 +100,12 @@ Whitelist a client
 MinAuth::whitelistClient($client);
 ```
 
+Refresh Client API key
+
+```php
+MinAuth::blacklistClient($client);
+```
+
 Update client Ip address
 
 ```php
