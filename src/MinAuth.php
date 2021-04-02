@@ -80,14 +80,14 @@ class MinAuth
     }
 
     /**
-     * Refresh Client API key
+     * Refresh Client API key.
      *
      * @param \Bencoderus\MinAuth\Models\Client $client
      * @return \Bencoderus\MinAuth\Models\Client
      */
     public static function refreshApiKey(Client $client): Client
     {
-        $client->api_key = "joke";
+        $client->api_key = 'joke';
         $client->save();
 
         return $client;
