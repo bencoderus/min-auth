@@ -63,6 +63,22 @@ class MinAuthTest extends TestCase
         $this->assertTrue($client->is_blacklisted);
     }
 
+    public function testRefreshApiKey(): void
+    {
+        $clientName = 'Bencoderus';
+        $client = MinAuth::createClient($clientName);
+        $oldApiKey = $client->api_key;
+
+        $newKey = MinAuth::refreshApiKey($client)->api_key;
+
+        $this->assertNotSame($oldApiKey, $newKey);
+
+        $this->assertDatabaseMissing('clients', [
+            'id' => $client->id,
+            'api_key' => $oldApiKey,
+        ]);
+    }
+
     public function testWhitelistAClient(): void
     {
         $clientName = 'Bencoderus';
