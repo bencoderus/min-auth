@@ -103,7 +103,7 @@ MinAuth::whitelistClient($client);
 Refresh Client API key
 
 ```php
-MinAuth::blacklistClient($client);
+MinAuth::refreshApiKey($client);
 ```
 
 Update client Ip address
